@@ -1,7 +1,10 @@
+using Microsoft.EntityFrameworkCore;
 using System;
+using AutoMapper;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CarProject.persistance;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
@@ -31,6 +34,8 @@ namespace WebApplicationBasic
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddAutoMapper();
+            services.AddDbContext<CarDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default"))); //Configuration["ConnectionStrings:Default"]
             //services.AddTransient<IRepository, Repository>();
 
             // Add framework services.
