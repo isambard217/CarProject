@@ -9,6 +9,10 @@ using CarProject.Controllers.Resources;
 
 namespace CarProject.Controllers
 {
+
+    // The Controller exposes endpoints
+    // The controller method is a contract between
+    // the client and the server
     public class MakesController : Controller
     {
         private readonly CarDbContext context;
@@ -28,7 +32,7 @@ namespace CarProject.Controllers
 
             var makes = await context.Makes.Include(m => m.Models).ToListAsync();
 
-            return Mapper.Map<List<Make>, List<MakeResource>>(makes);
+            return Mapper.Map<List<Make>, List<MakeResource>>(makes); // Source type, Target Type 
 
         }
 

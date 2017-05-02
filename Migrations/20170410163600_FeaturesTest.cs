@@ -13,7 +13,6 @@ namespace CarProject.Migrations
              migrationBuilder.Sql("INSERT INTO Features (Name) VALUES ('Feature2')");
              migrationBuilder.Sql("INSERT INTO Features (Name) VALUES ('Feature3')");
   
-
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

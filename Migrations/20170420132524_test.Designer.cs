@@ -8,9 +8,10 @@ using CarProject.persistance;
 namespace CarProject.Migrations
 {
     [DbContext(typeof(CarDbContext))]
-    partial class CarDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170420132524_test")]
+    partial class test
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")
@@ -92,13 +93,13 @@ namespace CarProject.Migrations
 
             modelBuilder.Entity("CarProject.Models.VehicleFeature", b =>
                 {
-                    b.Property<int>("VehicleId");
-
                     b.Property<int>("FeatureId");
 
-                    b.HasKey("VehicleId", "FeatureId");
+                    b.Property<int>("VehicleId");
 
-                    b.HasIndex("FeatureId");
+                    b.HasKey("FeatureId", "VehicleId");
+
+                    b.HasIndex("VehicleId");
 
                     b.ToTable("VehicleFeatures");
                 });
@@ -114,7 +115,7 @@ namespace CarProject.Migrations
             modelBuilder.Entity("CarProject.Models.Vehicle", b =>
                 {
                     b.HasOne("CarProject.Models.Model", "Model")
-                        .WithMany("vehicles")
+                        .WithMany()
                         .HasForeignKey("ModelId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

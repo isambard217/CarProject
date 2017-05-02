@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
-using CarProject.Models;
 
 namespace CarProject.Controllers.Resources
 {

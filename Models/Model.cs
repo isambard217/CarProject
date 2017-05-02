@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -14,8 +15,12 @@ namespace CarProject.Models
         [StringLength(255)]
         public string Name {get; set; }
 
+        public int MakeId { get; set; }
+
         public Make Make { get; set; }
 
-        public int MakeId { get; set; }
+        public IEnumerable<Vehicle> vehicles { get; set;} 
+
     }
+
 }
