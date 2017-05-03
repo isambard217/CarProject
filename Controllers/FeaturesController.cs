@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -26,6 +27,8 @@ namespace CarProject.Controllers
         [HttpGet("/api/features")]
         public async Task<IEnumerable<FeatureResource>> GetFeatures()
         {
+
+            throw new Exception("Hello World");
           
             var features = await context.Features.ToListAsync();
             

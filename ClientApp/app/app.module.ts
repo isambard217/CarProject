@@ -1,16 +1,20 @@
+import { DemoService } from './services/demo.service';
 import { FeatureService } from './services/feature.service';
 import { MakeService } from './services/make.service';
+import { VehicleService } from './services/vehicle.service';
+
 import { FormsModule} from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UniversalModule } from 'angular2-universal';
-import { VehicleService } from './services/vehicle.service';
+
 import { AppComponent } from './components/app/app.component'
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { VechicleFormComponent } from './components/vechicle-form/vechicle-form.component';
+import { DemoComponentComponent } from './components/demo-component/demo-component.component';
 //import { VehicleFormComponent } from './components/vehicle-form/vehicle-form.component';
 
 @NgModule({
@@ -21,7 +25,8 @@ import { VechicleFormComponent } from './components/vechicle-form/vechicle-form.
         CounterComponent,
         FetchDataComponent,
         HomeComponent,
-        VechicleFormComponent
+        VechicleFormComponent,
+        DemoComponentComponent
        // VehicleFormComponent
     ],
     imports: [
@@ -30,6 +35,7 @@ import { VechicleFormComponent } from './components/vechicle-form/vechicle-form.
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'vehicles/new', component: VechicleFormComponent},
+            { path: 'demo/new', component: DemoComponentComponent },
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
@@ -40,7 +46,8 @@ import { VechicleFormComponent } from './components/vechicle-form/vechicle-form.
 
        VehicleService,
        MakeService,
-       FeatureService
+       FeatureService,
+       DemoService
        
     ]
 })

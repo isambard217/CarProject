@@ -13,8 +13,10 @@ namespace CarProject.persistance
 
         public DbSet<Vehicle> Vehicles { get; set; }
 
-         public DbSet<Model> Models { get; set;}
+        public DbSet<Model> Models { get; set;}
 
+        public DbSet<Demo> Demos { get; set; }
+        
 
         // Constructors 
         public CarDbContext(DbContextOptions<CarDbContext> options)

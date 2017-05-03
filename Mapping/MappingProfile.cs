@@ -16,6 +16,7 @@ namespace CarProject.Mapping
             CreateMap<Feature, FeatureResource>();
             CreateMap<Make, MakeResource>();
             CreateMap<Model, ModelResource>();
+            CreateMap<Demo, DemoResource>();
 
             // Map API resource to Domain
             CreateMap<VehicleResource, Vehicle>()
